@@ -1,36 +1,28 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <?php wp_head(); ?>
-    </head>
-    <body>
+<?php get_header('front') ?>
         <div class="container">
-            <h1>HOMEPAGE</h1>
             <div class="row">
+                <div class="col">
+                    <h1>Home Page</h1>
+                </div>
                 <?php if(have_posts()): ?>
-                    <?php while(have_posts()): the_post();?>
-                        <?php if(has_post_thumbnail() ): ?>
-                            <div class="col-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <?php the_post_thumbnail(' thumbnail', array('class' => 'card-img-top')); ?>
-                        <?php else: ?>
-                                     <div class="col-sm">
-                        <?php endif; ?>
-                            <h3><?php the_title(); ?></h3>
-                            <div><?php the_content(); ?></div>
-                            
-                            <a href="<?= esc_url(get_permalink()); ?>" class="btn btn-warning">See More</a>
-
+                    <div class="card-columns">
+                        <?php while(have_posts()): the_post();?>
+                            <div class="card">
+                                <?php if( has_post_thumbnail() ): ?>
+                                    <?php the_post_thumbnail('thumbnail', ['class'=>'card-img-top img-fluid', 'alt'=>'Card image cap']); ?>
+                                <?php endif; ?>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php the_title(); ?></h5>
+                                    <div class="">
+                                        <?php the_content(); ?>
                                     </div>
-
+                                    <a class="btn btn-primary" href="<?= esc_url(get_permalink()); ?>">Go to post</a>
                                 </div>
-
                             </div>
-                    <?php endwhile; ?>
+                        <?php endwhile; ?>
+                    </div>
                 <?php endif; ?>
+
             </div>
         </div>
         <?php wp_footer(); ?>
