@@ -1,4 +1,6 @@
-<h3>This is coming from footer</h3>
+    <div class="classicFooter">
+        <p>FOOTER</p>
+    </div>
         <?php wp_footer(); ?>
     </body>
 </html>

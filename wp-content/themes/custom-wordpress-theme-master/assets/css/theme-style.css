@@ -30,3 +30,15 @@ ul li a {
 a:hover {
     color: red;
 }
+
+.twoColumns{
+    column-count: 2;
+}
+
+.classicFooter {
+    background-color: white;
+}
+
+.classicFooter p {
+    text-align: center;
+}
