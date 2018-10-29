@@ -17,24 +17,28 @@
         <h3>This is coming from header-front.php</h3>
         <p>This will only be used on the front page</p>
 
+
+        <!-- putting custom nav bar in bootstrap ones -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <?php         wp_nav_menu( array(
-                      'theme_location' => 'header_nav',
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <?php
+                wp_nav_menu( array(
+                    'theme_location' => 'header_nav',
                       // https://developer.wordpress.org/reference/functions/wp_nav_menu/
                       // 'menu_id' => 'menu-secondwp-navigation'
-                      'container_class' => 'collapse navbar-collapse',
-                      'container_id ' => 'header-container',
-                      'menu_id' => 'menu-secondwp',
-                      'menu_class' => 'navbar-nav mr-auto'
-                  ) ); ?>
+                    'container_class' => 'collapse navbar-collapse',
+                    'container_id ' => 'header-container',
+                    'menu_id' => 'menu-secondwp',
+                    'menu_class' => 'navbar-nav mr-auto'
+                ));
+            ?>
         </nav>
 
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -65,4 +69,4 @@
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </div>
-        </nav>
+        </nav> -->
