@@ -44,7 +44,7 @@ add_action('wp_enqueue_scripts', 'addCustomThemeStyles');
 add_theme_support( 'post-thumbnails' );
 
 // add_image_size('icon' ,100, 100, true); // custom image size
-
+add_theme_support( 'post-formats', array( 'aside', 'gallery', 'image', 'video' ) );
 
 function addCustomMenus(){
     add_theme_support('menu');
@@ -53,3 +53,37 @@ function addCustomMenus(){
     register_nav_menu('footer_nav', 'This is the footer which appears at the bottom of the page');
 }
 add_action('init', 'addCustomMenus');
+
+
+
+
+
+function add_staff_post_type() {
+    $labels = array(
+        'name' =>_x('Staff', 'post type name', '1818wdwu02customtheme'),
+        'singular_name' => _x('Staff', 'post type singular name', '1818wdwu02customtheme'),
+        'add_new_item' => _x('Add New Staff Member', '1818wdwu02customtheme')
+    );
+
+    $arg = array(
+        'labels' => $labels,
+        'description' => 'a post type for the staff members in the company',
+        'public' => true,
+        'hierarchical' => true,
+        'exculde_from_search' => false,
+        'show_ui' => true,
+        'show_in_nav_menu' => false,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-groups',
+        'supports' => array(
+            'title', //in staff menu
+            'thumbnail'
+        ), // what valeus what i want to include in 
+        'query_var' =>true
+
+
+
+    );
+    register_post_type('staff', $arg);
+}
+add_action('init', 'add_staff_post_type');

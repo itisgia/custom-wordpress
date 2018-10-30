@@ -31,7 +31,10 @@ a:hover {
     color: red;
 }
 
-.twoColumns{
+.card-columns {
+    width: 100%;
+}
+.twoColums {
     column-count: 2;
 }
 

@@ -6,7 +6,7 @@
  ?>
 
 
-<?php get_header(); ?>
+<?php get_header('front'); ?>
 
     <?php if(have_posts()): ?>
         <?php while(have_posts()): the_post();?>
